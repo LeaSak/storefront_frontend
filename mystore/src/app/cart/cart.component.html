@@ -1,0 +1,22 @@
+<section class="grid">
+  <!-- shopping items-->
+  <div class="grid-row gutter">
+    <div class="grid-cell">
+      <h3>Shopping bag</h3>
+       <p *ngIf="!items.length">You have no items in your cart</p>
+       <!-- item list-->
+        <app-order-item class="grid-row gutter" *ngFor="let item of items" [item]="item" (removed)="removeItem(item)"></app-order-item>
+      <!-- order summary-->
+      <div class="grid-row gutter">
+        <div class="grid-cell" *ngIf="items.length">
+          <h3>Order Summary</h3>
+          <h4>Total: {{totalOrderAmount | currency}}</h4>
+        </div>
+      </div>
+    </div>
+    <!-- order form -->
+    <div class="grid-cell" *ngIf="items.length">
+      <app-create-order [items]="items" [totalOrderAmount]="totalOrderAmount" (clearCart)="clearCart()"></app-create-order>
+    </div>
+  </div>
+</section>

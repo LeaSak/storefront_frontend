@@ -1,0 +1,12 @@
+
+<nav class="grid">
+    <div class="grid-row gutter">
+        <div class="grid-cell header">
+            <a [routerLink]="['/']">The Corner Shop</a> 
+        </div>
+        <div class="grid-cell cart">
+            <a routerLink="/cart">TROLLEY<i><mat-icon>shopping_basket</mat-icon></i></a>
+            <p>{{cartLength}}</p>
+        </div>
+    </div>
+</nav>

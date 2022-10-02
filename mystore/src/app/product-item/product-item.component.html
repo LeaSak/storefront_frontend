@@ -1,0 +1,7 @@
+
+<ul class="product-item">
+    <li><a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> <img class="product-image" [src]="product.url" [alt]="product.name + ' image'"></a></li>
+    <li><a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> {{ product.name }} </a></li>
+    <li>{{ product.price | currency }}</li>
+    <li><button class="purchase-btn" mat-flat-button type="button" (click)="addToCart(product)">ADD TO CART</button></li>
+</ul>

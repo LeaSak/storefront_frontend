@@ -1,0 +1,10 @@
+<div class="grid-cell">
+    <a [title]="item.name + ' details'" [routerLink]="['/products', item.id]"> <h3 class="cart-product-name">{{ item.name }}</h3> </a>
+    <div class="cart-product-details">
+      <span>Quantity: {{ item.quantity }}</span>
+      <span>{{ item.totalPrice | currency }}</span>
+    </div>
+    <div>
+      <button mat-stroked-button type="button" (click)="removed.emit(item)">REMOVE FROM CART</button>
+    </div>
+</div>

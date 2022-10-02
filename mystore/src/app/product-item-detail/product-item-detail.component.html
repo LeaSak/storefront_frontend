@@ -1,0 +1,15 @@
+<section class = "grid">
+  <div *ngIf="product" class="grid-row gutter">
+    <div class="grid-cell fifty product-item-detail"><img [src]="product.url" [alt]="product.name + ' image'"></div>
+    <div class="grid-cell product-item-detail">
+      <div>
+        <h3>{{ product.name }}</h3>
+        <p class="description">{{ product.description }}</p>
+      </div>
+      <h4>{{ product.price | currency }}</h4>
+      <button class="purchase-btn" mat-flat-button type="button" (click)="addToCart(product)">ADD TO CART</button>
+      <br>
+      <a [routerLink]="['/']">See Products</a> 
+    </div>
+  </div>  
+</section>

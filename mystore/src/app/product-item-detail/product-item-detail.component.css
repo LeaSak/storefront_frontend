@@ -1,0 +1,24 @@
+.description {
+    text-transform: lowercase;
+    color: #858585;
+}
+
+.product-item-detail {
+    padding: 2em;
+}
+
+.product-item-detail h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+    .product-item-detail {
+        padding: 4em;
+    }
+
+    .product-item-detail h3.product-item-detail h3 {
+        font-size: 2em;
+    }
+
+}

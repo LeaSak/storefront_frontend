@@ -1,0 +1,19 @@
+.cart-product-details {
+    color: grey;
+    padding: 1em 0;
+}
+.cart-product-details span {
+    color: grey;
+    margin-right: 1em;
+}
+
+.cart-product-name {
+    padding: 1em 0 0 0;
+    margin: 0;
+}
+
+
+@media screen and (min-width: 800px) {
+    
+
+}
