@@ -4,28 +4,26 @@ nav {
     padding: 2em;
     background-color: #b2eff8;
 }
+
+.nav-link {
+    display: inline-block;
+    margin-right: 1em;
+}
  
-nav a {
+.home {
     font-size: 2em;
     color: white;
+}
+
+.nav-link-container {
+    margin-top: 0.5em;
 }
 
 
 @media screen and (min-width: 800px) {
     
-    nav a {
+    .home a {
         font-size: 3em;
-    }
-
-    .cart a {
-        text-align: right;
-    }
-    .header {
-        flex: 0 0 66.66%;
-    }
-    
-    .cart {
-        flex: 0 0 33.33%
     }
 
 }

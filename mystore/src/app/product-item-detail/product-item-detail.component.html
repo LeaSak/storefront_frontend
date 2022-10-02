@@ -1,15 +1,20 @@
-<section class = "grid">
-  <div *ngIf="product" class="grid-row gutter">
-    <div class="grid-cell fifty product-item-detail"><img [src]="product.url" [alt]="product.name + ' image'"></div>
-    <div class="grid-cell product-item-detail">
-      <div>
-        <h3>{{ product.name }}</h3>
-        <p class="description">{{ product.description }}</p>
+<div fxLayout="row wrap" *ngIf="product" fxLayoutAlign="center center" class="product-item-container">
+  <div fxFill fxFlex="50" fxFlex.xs="100" fxFlex.sm="100">
+    <mat-card class="product-item-detail-card">
+      <mat-card-content>
+          <img class="product-image" [src]="product.url" [alt]="product.name + ' image'">
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFill fxFlex="50" fxFlex.xs="100" fxFlex.sm="100" >
+    <mat-card class="product-item-detail-card product-item-detail-description">
+      <div class="nav-link">
+        <a [routerLink]="['/']"> See all products</a>
       </div>
-      <h4>{{ product.price | currency }}</h4>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+      <p>{{product.description}}</p>
       <button class="purchase-btn" mat-flat-button type="button" (click)="addToCart(product)">ADD TO CART</button>
-      <br>
-      <a [routerLink]="['/']">See Products</a> 
-    </div>
-  </div>  
-</section>
+    </mat-card>
+  </div>
+</div>

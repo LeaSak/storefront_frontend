@@ -4,15 +4,13 @@ import ProductOrder from '../models/ProductOrder';
 @Component({
   selector: 'app-order-item',
   templateUrl: './order-item.component.html',
-  styleUrls: ['./order-item.component.css']
+  styleUrls: ['./order-item.component.css'],
 })
 export class OrderItemComponent implements OnInit {
-  @Input() item !: ProductOrder;
+  @Input() item!: ProductOrder;
   @Output() removed = new EventEmitter();
-  
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

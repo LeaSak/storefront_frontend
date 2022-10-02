@@ -1,23 +1,32 @@
-.description {
-    text-transform: lowercase;
-    color: #858585;
-}
-
-.product-item-detail {
+.product-item-container {
     padding: 2em;
 }
 
-.product-item-detail h3 {
-    font-size: 1.5em;
-    margin: 0;
+.product-item-detail-card {
+    margin: 1em;
+    padding: 1em;
+}
+
+.product-link {
+    margin-bottom: 2em;
+}
+
+.nav-link a {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.nav-link {
+    margin-bottom: 2em;
+}
+
+.product-item-detail-description {
+    box-shadow: none;
 }
 
 @media screen and (min-width: 800px) {
-    .product-item-detail {
-        padding: 4em;
-    }
 
-    .product-item-detail h3.product-item-detail h3 {
+    .mat-card-title {
         font-size: 2em;
     }
 

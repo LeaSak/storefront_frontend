@@ -3,20 +3,22 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/Product';
 import { ProductsService } from '../services/products.service';
 import { CartService } from '../services/cart.service';
-import ProductOrder from '../models/ProductOrder';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-item-detail',
   templateUrl: './product-item-detail.component.html',
-  styleUrls: ['./product-item-detail.component.css']
+  styleUrls: ['./product-item-detail.component.css'],
 })
 export class ProductItemDetailComponent implements OnInit {
-  product !: Product;
-  
-  
-  constructor(private selectedRoute:ActivatedRoute, private productsService: ProductsService, private cartService: CartService) {
+  product!: Product;
 
-  }
+  constructor(
+    private selectedRoute: ActivatedRoute,
+    private productsService: ProductsService,
+    private cartService: CartService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     const routeParams = this.selectedRoute.snapshot.paramMap;
@@ -26,13 +28,12 @@ export class ProductItemDetailComponent implements OnInit {
 
   getProductById(id: number): void {
     this.productsService.requestProducts().subscribe((data: Product[]) => {
-      this.product = this.productsService.getProductById(id, data)
+      this.product = this.productsService.getProductById(id, data);
     });
   }
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    this.snackBar.open('Your product has been added to the cart!', 'OK');
   }
-
 }

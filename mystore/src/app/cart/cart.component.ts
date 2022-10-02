@@ -1,27 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import ProductOrder from '../models/ProductOrder';
 import { CartService } from '../services/cart.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  item !: ProductOrder;
+  item!: ProductOrder;
   items: ProductOrder[] = this.cartService.getCartItems();
   totalOrderAmount: number = this.cartService.calcOrderTotal();
 
-  
-  constructor(private cartService:CartService) { }
+  constructor(
+    private cartService: CartService,
+    private snackBar: MatSnackBar
+  ) {}
 
-  ngOnInit(): void {
-  }
-  
-  removeItem(item:ProductOrder): void {
+  ngOnInit(): void {}
+
+  removeItem(item: ProductOrder): void {
     this.cartService.removeItem(item);
     this.totalOrderAmount = this.cartService.calcOrderTotal();
-    alert("Item was removed from cart")
+    this.snackBar.open('Item was removed from cart', 'OK');
   }
 
   clearCart(): void {

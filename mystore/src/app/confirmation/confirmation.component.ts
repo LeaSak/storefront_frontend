@@ -5,14 +5,12 @@ import Order from '../models/Order';
 @Component({
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
-  styleUrls: ['./confirmation.component.css']
+  styleUrls: ['./confirmation.component.css'],
 })
 export class ConfirmationComponent implements OnInit {
   order: Order = this.orderService.getOrder();
-  
-  constructor(private orderService: OrderService) { }
 
-  ngOnInit(): void {
-  }
+  constructor(private orderService: OrderService) {}
 
+  ngOnInit(): void {}
 }

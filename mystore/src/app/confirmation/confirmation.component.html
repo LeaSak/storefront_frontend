@@ -1,4 +1,4 @@
-<div>
+<div fxLayout="column" fxLayoutAlign="center center" class="confirmation-container">
     <h2>Thank you {{order.customer.fullname}} for your order!</h2>
-    <p>You order of {{order.totalOrderAmount}} will be on its way soon</p>
+    <p>You order of {{order.totalOrderAmount | currency}} will be on its way soon</p>
 </div>

@@ -8,29 +8,35 @@ import { OrderService } from '../services/order.service';
 @Component({
   selector: 'app-create-order',
   templateUrl: './create-order.component.html',
-  styleUrls: ['./create-order.component.css']
+  styleUrls: ['./create-order.component.css'],
 })
 export class CreateOrderComponent implements OnInit {
-  customer: Recipient = { 
+  customer: Recipient = {
     fullname: '',
     address: '',
     city: '',
-    creditCard: ''
+    creditCard: '',
   };
 
   @Input() totalOrderAmount: number = 0;
   @Input() items: ProductOrder[] = [];
   @Output() clearCart = new EventEmitter();
-  
-  constructor(private cartService: CartService, private orderService: OrderService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  constructor(
+    private cartService: CartService,
+    private orderService: OrderService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {}
 
   onSubmit(): void {
-    this.orderService.createOrder(this.customer, this.items, this.totalOrderAmount);
+    this.orderService.createOrder(
+      this.customer,
+      this.items,
+      this.totalOrderAmount
+    );
     this.clearCart.emit();
     this.router.navigate(['/confirmation']);
   }
-
 }

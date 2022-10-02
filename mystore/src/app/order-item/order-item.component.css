@@ -12,8 +12,6 @@
     margin: 0;
 }
 
-
-@media screen and (min-width: 800px) {
-    
-
+.order-item-card {
+    margin-bottom: 1em;
 }

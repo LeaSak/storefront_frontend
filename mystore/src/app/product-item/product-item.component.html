@@ -1,7 +1,9 @@
 
-<ul class="product-item">
-    <li><a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> <img class="product-image" [src]="product.url" [alt]="product.name + ' image'"></a></li>
-    <li><a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> {{ product.name }} </a></li>
-    <li>{{ product.price | currency }}</li>
-    <li><button class="purchase-btn" mat-flat-button type="button" (click)="addToCart(product)">ADD TO CART</button></li>
-</ul>
+<mat-card class="app-product-card">
+    <mat-card-content>
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> <img class="product-image" [src]="product.url" [alt]="product.name + ' image'"></a>
+    </mat-card-content>
+    <mat-card-title><a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> {{ product.name }} </a></mat-card-title>
+    <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+    <button class="purchase-btn" mat-flat-button type="button" (click)="addToCart(product)">ADD TO CART</button>
+</mat-card>

@@ -1,4 +1,4 @@
-<div class="grid-cell">
+<mat-card class="order-item-card">
     <a [title]="item.name + ' details'" [routerLink]="['/products', item.id]"> <h3 class="cart-product-name">{{ item.name }}</h3> </a>
     <div class="cart-product-details">
       <span>Quantity: {{ item.quantity }}</span>
@@ -7,4 +7,4 @@
     <div>
       <button mat-stroked-button type="button" (click)="removed.emit(item)">REMOVE FROM CART</button>
     </div>
-</div>
+</mat-card>

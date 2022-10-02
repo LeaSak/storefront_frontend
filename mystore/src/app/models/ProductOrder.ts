@@ -1,6 +1,6 @@
-import { Product } from "./Product";
+import { Product } from './Product';
 
 export default interface ProductOrder extends Product {
-    quantity: number,
-    totalPrice:number
+  quantity: number;
+  totalPrice: number;
 }

@@ -4,13 +4,17 @@ import ProductOrder from '../models/ProductOrder';
 import { Recipient } from '../models/Recipient';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
-  order !: Order
-  constructor() { }
+  order!: Order;
+  constructor() {}
 
-  createOrder(recipient: Recipient, products: ProductOrder[], totalOrderAmount: number): void {
+  createOrder(
+    recipient: Recipient,
+    products: ProductOrder[],
+    totalOrderAmount: number
+  ): void {
     const order: Order = {
       customer: {
         fullname: recipient.fullname,
@@ -19,8 +23,8 @@ export class OrderService {
         creditCard: recipient.creditCard,
       },
       products: products,
-      totalOrderAmount: totalOrderAmount
-    }
+      totalOrderAmount: totalOrderAmount,
+    };
 
     this.order = order;
   }
