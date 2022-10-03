@@ -8,9 +8,15 @@ import ProductOrder from '../models/ProductOrder';
 })
 export class OrderItemComponent implements OnInit {
   @Input() item!: ProductOrder;
+  @Output() quantityEmitter = new EventEmitter();
   @Output() removed = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  updateQuantity(quantity: number): void {
+    this.quantityEmitter.emit(this.item);
+  }
+  
 }

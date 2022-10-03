@@ -11,6 +11,14 @@ export class CartService {
 
   constructor() {}
 
+  updateItemInItems(item: ProductOrder):void {
+    const orderItem = this.checkItem(item);
+    if (orderItem){
+      orderItem.quantity = item.quantity;
+      this.setTotalPrice(orderItem);
+    }
+  }
+
   addToCart(product: Product): void {
     const item = this.checkItem(product);
     if (item) {

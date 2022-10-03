@@ -3,7 +3,7 @@
     <div fxLayout="column" fxFlex="calc(50 - 1em)" fxFlex.sm="100" fxFlex.xs="100" class="cart-cell">
       <h3>Shopping bag</h3>
       <p *ngIf="!items.length">You have no items in your cart</p>
-      <app-order-item *ngFor="let item of items" [item]="item" (removed)="removeItem(item)"></app-order-item>
+      <app-order-item *ngFor="let item of items" [item]="item" (removed)="removeItem(item)" (quantityEmitter)="updateQuantity(item)"></app-order-item>
     </div>
     <div *ngIf="items.length" fxFlex="calc(50 - 1em)" fxFlex.xs="100" class="cart-cell">
       <div *ngIf="items.length">

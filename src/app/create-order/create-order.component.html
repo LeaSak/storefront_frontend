@@ -1,23 +1,23 @@
 <h3>Order Information</h3>
 <form #form="ngForm" (ngSubmit)="onSubmit()">
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="order-form">
       <mat-label for="fullname">Fullname</mat-label>
       <input matInput type="text" name="fullname" required minlength="4" #orderData="ngModel" [(ngModel)]="customer.fullname">
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="order-form">
       <mat-label for="address">Address</mat-label>
         <input matInput type="text" name="address" required #orderData="ngModel" [(ngModel)]="customer.address">
     </mat-form-field>
      <br> 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="order-form">
       <mat-label for="city">City</mat-label>
       <input matInput type="text" name="city" required #orderData="ngModel" [(ngModel)]="customer.city">
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="fill" class="order-form">
       <mat-label for="credit">Credit Card</mat-label>
-      <input matInput type="text" name="credit" required minlength="16" #orderData="ngModel" [(ngModel)]="customer.creditCard">
+      <input matInput name="credit" type="text" required minlength="16" pattern="^[0-9]{16,}$" #orderData="ngModel" [(ngModel)]="customer.creditCard">
     </mat-form-field>
     <br>
     <button class="purchase-btn" mat-flat-button type="submit" [disabled]="form.invalid">SUBMIT</button>

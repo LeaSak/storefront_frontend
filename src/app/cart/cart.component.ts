@@ -20,6 +20,11 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  updateQuantity(item: ProductOrder): void {
+    this.cartService.updateItemInItems(item);
+    this.totalOrderAmount = this.cartService.calcOrderTotal();
+  }
+
   removeItem(item: ProductOrder): void {
     this.cartService.removeItem(item);
     this.totalOrderAmount = this.cartService.calcOrderTotal();
